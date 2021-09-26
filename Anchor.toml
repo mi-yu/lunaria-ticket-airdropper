@@ -1,0 +1,12 @@
+[programs.localnet]
+lunaria-mint-token = "Gkazfbm381uaVcbuDhECF6iK2QXMQEMxJvXZjZsJMW3v"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "localnet"
+wallet = "/Users/michaelyu/.config/solana/id.json"
+
+[scripts]
+test = "mocha -t 1000000 tests/"
