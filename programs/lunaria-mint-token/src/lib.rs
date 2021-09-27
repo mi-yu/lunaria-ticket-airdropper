@@ -17,7 +17,6 @@ pub mod lunaria_mint_token {
     pub fn airdrop(ctx: Context<Airdrop>, bump: u8) -> ProgramResult {
         let mint_key = ctx.accounts.mint.key();
         let user = &ctx.accounts.user;
-        // let mint: Mint = assert_initialized(&ctx.accounts.mint)?;
         let associated_token_account_key =
             get_associated_token_address(&user.key, &ctx.accounts.mint.key);
         if associated_token_account_key != *ctx.accounts.user_token_account.key {
@@ -26,7 +25,8 @@ pub mod lunaria_mint_token {
         let associated_token_account: Account =
             assert_initialized(&ctx.accounts.user_token_account)?;
         if associated_token_account.amount >= 1 {
-            return Err(ErrorCode::AirdropLimitReached.into());
+            return Ok(());
+            // return Err(ErrorCode::AirdropLimitReached.into());
         }
 
         let expected_source_token_authority = Pubkey::create_program_address(
