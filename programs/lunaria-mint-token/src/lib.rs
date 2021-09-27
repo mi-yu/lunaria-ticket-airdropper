@@ -7,7 +7,7 @@ use {
     spl_token::state::Account,
 };
 
-declare_id!("2CfjCszjTaj3y12JsFaxk6MGvqUAUF1kqSUhMDPJ9c9u");
+declare_id!("4mtJGynCEHGeXH8sVSWAgjh1mi9Lm141MvkG2nPquNPU");
 
 const PREFIX: &str = "ticket_account";
 #[program]

@@ -1,6 +1,9 @@
 [programs.localnet]
 lunaria-mint-token = "2CfjCszjTaj3y12JsFaxk6MGvqUAUF1kqSUhMDPJ9c9u"
 
+[programs.mainnet]
+lunaria-mint-token = "4mtJGynCEHGeXH8sVSWAgjh1mi9Lm141MvkG2nPquNPU"
+
 [registry]
 url = "https://anchor.projectserum.com"
 
