@@ -7,7 +7,7 @@ use {
     spl_token::state::Account,
 };
 
-declare_id!("Gkazfbm381uaVcbuDhECF6iK2QXMQEMxJvXZjZsJMW3v");
+declare_id!("2CfjCszjTaj3y12JsFaxk6MGvqUAUF1kqSUhMDPJ9c9u");
 
 const PREFIX: &str = "ticket_account";
 #[program]
@@ -29,12 +29,13 @@ pub mod lunaria_mint_token {
             // return Err(ErrorCode::AirdropLimitReached.into());
         }
 
+        // msg!("checking source token authority...");
         let expected_source_token_authority = Pubkey::create_program_address(
             &[&PREFIX.as_bytes(), &mint_key.to_bytes(), &[bump]],
             &id(),
         )?;
         let authority_seeds = [PREFIX.as_bytes(), mint_key.as_ref(), &[bump]];
-
+        // msg!("expected: {:?} actual: {:?}", expected_source_token_authority, ctx.accounts.source_authority.key);
         if expected_source_token_authority != *ctx.accounts.source_authority.key {
             return Err(ErrorCode::IncorrectProgramTokenAccount.into());
         }
